@@ -6,23 +6,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Book {
-    private Long id;
-    private String title;
-    private String author;
-    private int localization;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+public class Magazine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+   private String title;
+   private String author;
+   private int localization;
+
+    public Magazine() {
+    }
+
     public Long getId() {
         return id;
     }
 
-    public Book() {
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -48,15 +50,4 @@ public class Book {
     public void setLocalization(int localization) {
         this.localization = localization;
     }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", localization=" + localization +
-                '}';
-    }
 }
-
